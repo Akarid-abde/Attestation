@@ -24,7 +24,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user','UserController@index')->middleware('auth');
+
+// Route users
+Route::get('users','UserController@index')->middleware('auth');
+Route::get('/user/create','UserController@create')->middleware('auth');
+Route::post('users','UserController@store')->middleware('auth');
+Route::get('users/{id}/edit','UserController@edit')->middleware('auth');
+Route::put('users/{id}','UserController@update')->middleware('auth');
+Route::delete('users/{id}','UserController@destroy')->middleware('auth');
+
+
 Route::get('/home', function () {
     return view('home');
 })->middleware('auth');
