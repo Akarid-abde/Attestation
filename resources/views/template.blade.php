@@ -11,20 +11,8 @@
                 <form id="form" action="{{ url('users') }}" method="post">
                     {{ csrf_field() }}
 
-                    <div class="form-row">
-
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email Personnel</label>
-                            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email Personnel">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email Academic</label>
-                            <input name="EMAIL_ACADEMIC" type="email" class="form-control" id="inputEmail4" placeholder="Email Academique">
-                        </div>
-
-                    </div>
-
+                    
+                    <!-- Nom Prenom Doti Npost Sexe  -->
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="inputNom">Nom</label>
@@ -35,7 +23,7 @@
                             <input name="prenom" type="text" class="form-control" id="inputPRENOM">
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="inputZip">CIN</label>
+                            <label for="inputCIN">CIN</label>
                             <input name="CIN" type="text" class="form-control" id="inputCIN">
                         </div>
                  
@@ -47,57 +35,127 @@
                             <label for="inputDOTI">N_POSTE</label>
                             <input name="N_POSTE" type="text" class="form-control" id="inputN_POSTE">
                         </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputState">Sexe</label>
+                            <select name="Sexe" id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option value="H">H</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="form-row">
+                             <!-- Nom prenom date naissance -->
+                        <div class="form-row">
                         <div class="form-group col-md-2">
-                            <label for="inputNom">Nom Prenom</label>
-                            <input name="nom" type="text" class="form-control" id="inputNOM">
+                            <label for="inputNOM_PPRENOM">Nom Prenom</label>
+                            <input name="NOM_PPRENOM" type="text" class="form-control" id="inputNOM_PPRENOM">
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="inputPrenom">الاسم الكامل</label>
-                            <input name="prenom" type="text" class="form-control" id="inputPRENOM">
+                            <label for="inputNOM_PRENOM_AR">الاسم الكامل</label>
+                            <input name="NOM_PRENOM_AR" type="text" class="form-control" id="inputNOM_PRENOM_AR">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputZip">Date Naissance</label>
+                            <label for="inputDateNaissance">Date Naissance</label>
                             <input name="DATE_DE_NAISSANCE" type="date" class="form-control" id="inputCIN">
                         </div>
                       
                         <div class="form-group col-md-4">
-                            <label for="inputAnnee">Annee Naissance</label>
+                            <label for="inputAnneeNaissance">Annee Naissance</label>
                             <input name="YEAR_NAISSANCE" type="number" min="1900" max="2099" step="1" value="2016" class="form-control" id="inputAnnee" />
+                        </div>
+                    </div>
+
+                   <!-- Telephones -->
+                    <div class="form-row">
+                    <div class="form-group col-md-4">
+                            <label for="inputTELEPHONE">TELEPHONE</label>
+                            <input name="TELEPHONE" type="text" pattern="(?:(?:\+|00)2126|0)\s*[1-9](?:[\s.-]*\d{2}){4}" placeholder="+2126 XX XX XX XX" class="form-control" id="inputTELEPHONE">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputTELE_FAX">TELE_FAX</label>
+                            <input name="TELE_FAX" type="text" pattern="(?:(?:\+|00)212|0)\s*[1-9](?:[\s.-]*\d{2}){4}"  placeholder="+2125 XX XX XX XX"  class="form-control" id="inputTELE_FAX">
+                        </div>
+                    </div>
+                    <hr><br>
+
+                    <!-- Emails -->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmailPersonnel">Email Personnel</label>
+                            <input name="email" type="email" class="form-control" id="inputEmailPersonnel" placeholder="Example@gmail.com">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputEmailAcademic">Email Academic</label>
+                            <input name="EMAIL_ACADEMIC" type="email" class="form-control" id="inputEmailAcademic" placeholder="Example@uae.ac.ma">
+                        </div>
+
+                    </div>
+
+                    <!-- Date Recrutement -->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputDATE_DE_RECRUTEMENT">DATE DE RECRUTEMENT</label>
+                            <input name="DATE_DE_RECRUTEMENT" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="inputGRADE">GRADE</label>
+                            <input name="GRADE" type="text" class="form-control" id="inputNOM">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="inputGRADE_AR">GRADE_AR</label>
+                            <input name="GRADE_AR" type="text" class="form-control" id="inputNOM">
                         </div>
                  
                     </div>
 
-                    <div class="form-group">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    <!-- Date Echelle -->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputDATE_EFFET_ECHELLE">DATE EFFET ECHELLE</label>
+                            <input name="DATE_EFFET_ECHELLE" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputECHELLE">ECHELLE</label>
+                            <input name="ECHELLE" type="text" class="form-control" id="inputECHELLE">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputNom">ECHELLON</label>
+                            <input name="ECHELLON" type="text" class="form-control" id="inputNOM">
+                        </div>
+                        
+                        <div class="form-group col-md-4">
+                            <label for="inputDATE_EFFET_ECHELLE">DATE EFFET ECHELLE</label>
+                            <input name="DATE_EFFECT_ECHELLON" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
+                        </div>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="inputAddress2">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                    </div> -->
+                    <div class="form-group">
+                        <label for="inputAddress">ADRESSE</label>
+                        <input name="ADRESSE" type="text" class="form-control" id="inputAddress" placeholder="ADRESSE">
+                    </div>
+
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
-                        </div>
+                        
                         <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
+                            <label for="inputState">Active</label>
+                            <select name="Active" id="inputState" class="form-control">
                                 <option selected>Choose...</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                                <option value="Active">Active</option>
+                                <option value="Desactive">Desactive</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-2">
+
+                        <!-- <div class="form-group col-md-2">
                             <label for="inputZip">Zip</label>
                             <input type="text" class="form-control" id="inputZip">
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="form-group">
