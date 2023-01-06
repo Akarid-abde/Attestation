@@ -17,7 +17,8 @@ class User extends Authenticatable implements MustVerifyEmail,CanResetPassword
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','is_admin','N_POSTE','DOTI','CIN','EMAIL_ACADEMIC','NOM','PRENOM','NOM_PRENOM','NOM_PRENOM_AR','DATE_DE_NAISSANCE','YEAR_NAISSANCE',
+        'DATE_DE_RECRUTEMENT','GRADE','GRADE_AR','DATE_EFFET_ECHELLE','ECHELLE','ECHELLON','DATE_EFFECT_ECHELLON','AFFECTATION','ADRESSE','TELEPHONE','TELE_FAX','SEXE','ACTIVE',
     ];
 
     /**

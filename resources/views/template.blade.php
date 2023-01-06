@@ -5,13 +5,14 @@
             <section id="Formulaire" class="border rounded p-3">
                 <h1 class="text-center"> Formulaire </h1>
                 <a href="#" id="showFormulaire" class="d-flex justify-content-md-end">
-                    <span class="badge badge-primary"><i class="fa fa-arrow-down"></i></span>
+                    <span class="badge badge-primary">
+                        <i class="fa fa-arrow-down"></i>
+                    </span>
                 </a>
 
                 <form id="form" action="{{ url('users') }}" method="post">
                     {{ csrf_field() }}
 
-                    
                     <!-- Nom Prenom Doti Npost Sexe  -->
                     <div class="form-row">
                         <div class="form-group col-md-2">
@@ -75,6 +76,10 @@
                         <div class="form-group col-md-4">
                             <label for="inputTELE_FAX">TELE_FAX</label>
                             <input name="TELE_FAX" type="text" pattern="(?:(?:\+|00)212|0)\s*[1-9](?:[\s.-]*\d{2}){4}"  placeholder="+2125 XX XX XX XX"  class="form-control" id="inputTELE_FAX">
+                        </div>
+                        <div class="form-group col-md-4" hidden="true">
+                        <label for="inputPassword4">Password</label>
+                        <input name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
                         </div>
                     </div>
                     <hr><br>
