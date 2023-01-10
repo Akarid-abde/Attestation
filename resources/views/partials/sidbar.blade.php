@@ -11,8 +11,8 @@
                     </li>
                     <li class="" id="G11">
                         <a href="{{ url('/home') }}"  class="text-center text-black"><span class="fa fa-cogs"></span>بطاقة الترقية الموضفين</a>
-                        <a href="#"  class="text-center text-black"><span class="fa fa-cogs"></span>Les retraits</a>
-                        <a href="#"  class="text-center text-black"><span class="fa fa-cogs"></span>Attestation Travail</a>
+                        <a href="{{ url('/retraits')}}"  class="text-center text-black"><span class="fa fa-cogs"></span>Les retraits</a>
+                        <a href="{{ url('/Atravail')}}"  class="text-center text-black"><span class="fa fa-cogs"></span>Attestation Travail</a>
                     </li>
                 </div>
 

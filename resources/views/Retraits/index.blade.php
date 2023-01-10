@@ -3,7 +3,7 @@
 @section('content')
 
             <section id="Formulaire" class="border rounded p-3">
-                <h1 class="text-center"> Accuille </h1>
+                <h1 class="text-center"> Retraits </h1>
                 <a href="#" id="showFormulaire" class="d-flex justify-content-md-end">
                     <span class="badge badge-primary">
                         <i class="fa fa-arrow-down"></i>

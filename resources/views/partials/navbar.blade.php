@@ -10,20 +10,12 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil</a>
-                </li>
-                @if (Route::has('login'))
+                
+                @if(Route::has('login'))
                     @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/home') }}">Home</a>
                         </li>
-                        @if (Route::has('register') and Auth::user()->ACTIVE == "Active")
-                        <!-- @if (Route::has('register') and Auth::user()->ACTIVE == "Active") -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
-                        </li>
-                        @endif
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -41,13 +33,20 @@
                                     </form>
                                 </div>
                             </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    </li>
+                        @if (Route::has('register') and Auth::user()->ACTIVE == "Active")
+                            <!-- @if (Route::has('register') and Auth::user()->ACTIVE == "Active") -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">Register</a>
+                            </li>
+                        @else
+                        @endif
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
                     @endauth
                     @endif
+                @endif
               </ul>
             </div>
           </div>
-        </nav>
+</nav>
