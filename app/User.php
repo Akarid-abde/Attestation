@@ -44,4 +44,8 @@ class User extends Authenticatable implements MustVerifyEmail,CanResetPassword
     {
         return $this->hasOne(Retrait::class, 'foreign_key');
     }
+    public function fonctionnaire()
+    {
+        return $this->hasOne(Fonctionnaire::class, 'foreign_key');
+    }
 }

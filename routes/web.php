@@ -74,3 +74,8 @@ Route::get('Atravail/{id}/edit','AtttController@edit')->middleware('auth');
 Route::put('Atravail/{id}','AtttController@update')->middleware('auth');
 Route::delete('Atravail/{id}','AtttController@destroy')->middleware('auth');
 
+
+
+Route::get('/liste_fonc_pdf', 'FonctionnaireController@index');
+Route::get('/liste_fonc_pdf/pdf', 'FonctionnaireController@pdf');
+Route::get('/liste_fonc_pdf/pdf/{id}', 'FonctionnaireController@pdfE')->name('AttestationTravail');;
