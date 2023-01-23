@@ -48,9 +48,7 @@
 
 <script>
     $(document).ready(function(){
-
         fetch_data();
-        
         function fetch_data(query = '')
         {
             $.ajax({

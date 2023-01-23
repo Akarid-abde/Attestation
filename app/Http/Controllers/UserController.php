@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use DB;
 class UserController extends Controller
 {
     /**
@@ -52,6 +53,9 @@ class UserController extends Controller
         // $users->password = Hash::make($request->input('name'));
         return dd($users);
     }
+
+
+    
 
     /**
      * Display the specified resource.

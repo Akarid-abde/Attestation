@@ -20,19 +20,16 @@ class LiveSearch extends Controller
             if($query != '')
             {
                 $data = DB::table('fonc')
-                        ->where('name','like','%'.$query.'%')
-                        ->orwhere('add','like','%'.$query.'%')
-                        //->orwhere('tele','like','%'.$query.'%')
-                        ->orwhere('id','like','%'.$query.'%')
-                        ->orderBy('name','desc')
+                        ->where('name',$query)
+                        ->Orwhere('id',$query)
                         ->get();
             }
-            else
-            {
-                $data = DB::table('fonc')
-                        ->orderBy('name','desc')
-                        ->get();
-            }
+            // else
+            // {
+            //     $data = DB::table('fonc')
+            //             ->orderBy('name','desc')
+            //             ->get();
+            // }
             $total_row = $data->count();
             if($total_row > 0)
             {

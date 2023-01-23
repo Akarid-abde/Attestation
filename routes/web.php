@@ -34,6 +34,7 @@ Route::put('users/{id}','UserController@update')->middleware('auth');
 Route::delete('users/{id}','UserController@destroy')->middleware('auth');
 
 
+
 // Route Retraits
 Route::get('retraits','RetraitController@index')->middleware('auth');
 Route::get('/retraits/create','RetraitController@create')->middleware('auth');
@@ -68,14 +69,16 @@ Route::get('/nav', function () {
 
 // Attestation de travail
 Route::get('Atravail','AtttController@index')->middleware('auth');
+// Generate pdf Attestation Travial
+Route::get('/Atravail/pdf', 'AtttController@pdf')->middleware('auth');
+Route::get('/Atravail/pdf/{id}', 'AtttController@pdfE')->middleware('auth')->name('AttestationTravail');
+
 Route::get('/Atravail/create','AtttController@create')->middleware('auth');
 Route::post('Atravail','AtttController@store')->middleware('auth');
 Route::get('Atravail/{id}/edit','AtttController@edit')->middleware('auth');
 Route::put('Atravail/{id}','AtttController@update')->middleware('auth');
 Route::delete('Atravail/{id}','AtttController@destroy')->middleware('auth');
+// Route::post('find','AtttController@find')->middleware('auth');
 
-
-
-Route::get('/liste_fonc_pdf', 'FonctionnaireController@index');
-Route::get('/liste_fonc_pdf/pdf', 'FonctionnaireController@pdf');
-Route::get('/liste_fonc_pdf/pdf/{id}', 'FonctionnaireController@pdfE')->name('AttestationTravail');;
+Route::get('/find','AtttController@index');
+Route::get('/find/action','AtttController@find')->name('find.action');
