@@ -17,6 +17,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
+        "mpdf/mpdf": "^8.1",
+        "niklasravnsborg/laravel-pdf": "^4.1",
         "yajra/laravel-datatables-oracle": "^9.21"
     },
     "require-dev": {

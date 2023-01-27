@@ -7,10 +7,11 @@
     <title>Projet FS Tetouan</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <script>
+   
+   <script>
             $(document).ready(function(){
                 $('#G1').click(function(){
                     $("#G11").toggle('slow');
@@ -23,6 +24,21 @@
                 });
                 $('#G4').click(function(){
                     $("#G44").toggle('slow');
+                });
+                $('#showFormulaire').click(function(){
+                    $("#form").toggle('slow');
+                });
+                $('#flexCheckChecked').click(function(){
+                    if($(this).prop("checked") == true){
+                        
+                        $( "#dateN" ).prop( "disabled", true );
+                        $( "#inputAnnee" ).prop( "disabled", false );
+                    }
+                    else if($(this).prop("checked") == false){
+                       
+                        $( "#dateN" ).prop( "disabled", false );
+                        $( "#inputAnnee" ).prop( "disabled", true );
+                    }
                 });
     
                 
@@ -63,6 +79,7 @@
     <script src="{{ asset('js/popper.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    
 
 
 
