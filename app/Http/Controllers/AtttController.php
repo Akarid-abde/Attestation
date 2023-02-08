@@ -16,14 +16,49 @@ class AtttController extends Controller
         return view('AttestationTravail/index')->with('fonc_data',$fonc_data);
     }
 
-    public function generatePDF()
+    public function generatePDF($id)
+    {
+        $data =  User::find($id);
+        
+        $path = base_path('public/images/logo.png');
+        $type = pathinfo($path,PATHINFO_EXTENSION);
+        $da = file_get_contents($path);
+        $logo = 'data:image/'.$type.';base64,'.base64_encode($da);
+
+        $path2 = base_path('public/images/faculte.PNG');
+        $type2 = pathinfo($path2,PATHINFO_EXTENSION);
+        $da2 = file_get_contents($path2);
+        $logo2 = 'data:image/'.$type2.';base64,'.base64_encode($da2);
+
+        $path3 = base_path('public/images/faculteF.PNG');
+        $type3 = pathinfo($path3,PATHINFO_EXTENSION);
+        $da3 = file_get_contents($path3);
+        $logo3 = 'data:image/'.$type3.';base64,'.base64_encode($da3);
+
+        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, "isRemoteEnabled"=> true,"defaultPaperSize" => "a4"])->loadView('myPDF', ['data' => $data,'logo' => $logo,'logo2' => $logo2
+        ,'logo3' => $logo3]);
+        // return $pdf->download('Attestation.pdf');
+
+        return $pdf->stream('Attestation.pdf');
+    }
+
+    public function generatePdfTest()
     {
         $data =  User::find(1);
-        // $data = ['title' => 'Welcome to ItSolutionStuff.com'];
-        $pdf = PDF::loadView('myPDF', ['data' => $data]);
-  
-        return $pdf->download('Attestation.pdf');
-        // return $pdf->stream('Attestation.pdf');
+        
+        $path = base_path('public/images/logo.png');
+        $type = pathinfo($path,PATHINFO_EXTENSION);
+        $da = file_get_contents($path);
+        $logo = 'data:image/'.$type.';base64,'.base64_encode($da);
+
+        $path2 = base_path('public/images/faculte.PNG');
+        $type2 = pathinfo($path2,PATHINFO_EXTENSION);
+        $da2 = file_get_contents($path2);
+        $logo2 = 'data:image/'.$type2.';base64,'.base64_encode($da2);
+
+        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, "isRemoteEnabled"=> true])->loadView('myPDF', ['data' => $data,'logo' => $logo,'logo2' => $logo2]);
+        // return $pdf->download('Attestation.pdf');
+        return $pdf->stream('Attestation.pdf');
     }
 
     public function fr()
@@ -85,208 +120,6 @@ class AtttController extends Controller
         }
     }
     
-
-
-    function pdf(){
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($this->convert_fonct_data_to_html());
-        $pdf->getDomPDF()->set_option('enable_php',true);
-        $pdf->setPaper('a4','landscape');
-        return $pdf->stream();
-    }
-
-
-    function pdfE($id){
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($this->convert_fonctE_data_to_html($id));
-        $pdf->getDomPDF()->set_option('enable_php',true);
-        $pdf->setPaper('a4','landscape');
-        return $pdf->stream();
-    }
-
-    function convert_fonct_data_to_html(){
-        $fonc_data = $this->get_fonct_data();
-        $output ='
-        <h3>Listes Fonctionnaires</h3>
-        <table width="100%" style="border-collapse">
-        <tr>
-            <th>Doti</th>
-            <th>Nom</th>
-        </tr>
-        ';
-        foreach($fonc_data as $data)
-        {
-        $output .= '
-            <tr>
-                <td>'.$data->id.'</td>
-                <td>'.$data->name.'</td>
-            </tr>
-        ';
-        }
-        $output .='
-        <script type="text/php">
-        if(isset($pdf)){
-        $text = "Page : {PAGE_NUM}/{PAGE_COUNT}";
-        $size = 10;
-        $font = $fontMetrics->getFont("Verdana");
-        $width = $fontMetrics->get_text_width($text,$font,$size) /2;
-        $x= ($pdf->get_width() - $width) /2;
-        $y= $pdf->get_height() - 35;
-        $pdf->page_text($x,$y,$text,$font,$size);
-    }
-    </script>
-        ';
-    return $output;
-    }
-
-    function convert_fonctE_data_to_html($id){
-        
-        $fonc_data = $this->get_fonctE_data($id);
-
-        $output ='
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Attestation de Travail</title>
-        </head>
-        <style type="text/css">
-        .m-0{
-            margin: 0px;
-        }
-    .p-0{
-        padding: 0px;
-    }
-    .pt-5{
-        padding-top:5px;
-    }
-    .mt-10{
-        margin-top:10px;
-    }
-    .text-center{
-        text-align:center !important;
-    }
-    .w-100{
-        width: 100%;
-    }
-    .w-50{
-        width:50%;   
-    }
-    .w-85{
-        width:85%;   
-    }
-    .w-15{
-        width:15%;   
-    }
-    .logo img{
-        width:45px;
-        height:45px;
-        padding-top:30px;
-    }
-    .logo span{
-        margin-left:8px;
-        top:19px;
-        position: absolute;
-        font-weight: bold;
-        font-size:25px;
-    }
-    .gray-color{
-        color:#5D5D5D;
-    }
-    .text-bold{
-        font-weight: bold;
-    }
-    .border{
-        border:1px solid black;
-    }
-    table tr,th,td{
-        border: 1px solid #d2d2d2;
-        border-collapse:collapse;
-        padding:7px 8px;
-    }
-    table tr th{
-        background: #F4F4F4;
-        font-size:15px;
-    }
-    table tr td{
-        font-size:13px;
-    }
-    table{
-        border-collapse:collapse;
-    }
-    .box-text p{
-        line-height:10px;
-    }
-    .float-left{
-        float:left;
-    }
-    .total-part{
-        font-size:16px;
-        line-height:12px;
-    }
-    .total-right p{
-        padding-right:20px;
-    }
-    td {
-    border: 1px solid #000;
-    }
-</style>
-<body>
-<table align="center" style=" margin: 15px 0;" class="w-100">
-        <thead>
-            <tr>
-            <td class="text-center m-0 p-0">
-            <h3>UNIVERSITE ABDELMALEK ESSAADI <br>
-            FACULTE DES SCIENCES 
-            TETOUAN</h3>
-            </td>
-            <td class="text-center m-0 p-0">
-            <img class="text-center m-0 p-0" src="public/img/logo.png" style="width:170px;height:150px"/>
-            </td>
-            <td class="text-center m-0 p-0">
-            <h2 dir="rtl" lang="AR" style="font-family: DejaVu Sans, sans-serif;text-align: center;"> 
-            <br>جامعة عبد المالك السعدي
-            كلية العلوم
-            <br>تطوان
-            </h2>
-            </td>
-            </tr>
-        </thead>
-</table>
-
-<fieldset>
-    <div class="head-title">
-    <h3 class="text-center m-0 p-0">ATTESTATION  DE  TRAVAIL</h3>
-</div>
-
-<div class="add-detail mt-10">
-    
-
-        <h4>  Le Doyen de la Faculté des Sciences de Tétouan,</h4>   
-        
-        <h4>  Certifie que Mr   :  '.$fonc_data->name.'</h4>
-        <h4>  DOTI  : '.$fonc_data->id.' </h4> 
-        <br>
-
-        <h4> Exerce à la dite Faculté en qualité de: </h4> 
-
-        <h3 align="center">'.$fonc_data->GRADE.'</h3> 
-        
-        <h4> En fois de quoi, cette attestation lui est délivrée, sur sa demande, pour servir et valoir ce que de droit.</h4> 
-        <p align="center" style="{ font-weight: bold; }">  Fait à Tétouan , le {{date("d/m/Y")}} </p>
-        
-        <br>
-</div>
-</fieldset>
-
-</body>
-</html>
-        ';
-
-
-
-        return $output;
-    }
 
     /**
      * Show the form for creating a new resource.

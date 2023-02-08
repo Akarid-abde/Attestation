@@ -6,7 +6,7 @@
 </head>
 <style type="text/css">
     body{
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Baskerville Old Face';
     }
     .m-0{
         margin: 0px;
@@ -14,131 +14,96 @@
     .p-0{
         padding: 0px;
     }
-    .pt-5{
-        padding-top:5px;
-    }
-    .mt-10{
-        margin-top:10px;
-    }
-    .text-center{
-        text-align:center !important;
-    }
-    .w-100{
-        width: 100%;
-    }
-    .w-50{
-        width:50%;   
-    }
-    .w-85{
-        width:85%;   
-    }
-    .w-15{
-        width:15%;   
-    }
-    .logo img{
-        width:45px;
-        height:45px;
-        padding-top:30px;
-    }
-    .logo span{
-        margin-left:8px;
-        top:19px;
-        position: absolute;
-        font-weight: bold;
-        font-size:25px;
-    }
-    .gray-color{
-        color:#5D5D5D;
-    }
-    .text-bold{
-        font-weight: bold;
-    }
+
     .border{
         border:1px solid black;
     }
-    table tr,th,td{
-        border: 1px solid #d2d2d2;
-        border-collapse:collapse;
-        padding:7px 8px;
-    }
-    table tr th{
-        background: #F4F4F4;
-        font-size:15px;
-    }
-    table tr td{
-        font-size:13px;
-    }
-    table{
-        border-collapse:collapse;
-    }
-    .box-text p{
-        line-height:10px;
-    }
-    .float-left{
-        float:left;
-    }
-    .total-part{
-        font-size:16px;
-        line-height:12px;
-    }
-    .total-right p{
-        padding-right:20px;
-    }
-    td {
-    border: 1px solid #000;
-    }
+
+#footer-content {
+  height: 15px; /* height + top/bottom paddding + top/bottom border must add up to footer height */
+  padding: 6px;
+  margin-bottom:0px;
+  font-size: 0.875em;
+}
+
+header {
+    display: block; text-align: center; 
+    position: running(header);
+}
 </style>
 <body>
-<table align="center" style=" margin: 18px 0;" class="w-100">
+<header style="padding-top:-50px">
+<table style="text-align:center">
         <thead>
             <tr>
-            <td class="text-center m-0 p-0">
-            <h3>UNIVERSITE ABDELMALEK ESSAADI <br>
-            FACULTE DES SCIENCES 
-            TETOUAN</h3>
+            <td style="text-align:center">
+            <h3>UNIVERSITE ABDELMALEK ESSAADI
+            </br> FACULTE DES SCIENCES
+            </br> TETOUAN
+            </h3>
             </td>
-            <td class="text-center m-0 p-0">
-            <img class="text-center m-0 p-0" src="{{  url('img/logo.png') }}" style="width:170px;height:150px"/>
+            <td style="text-align:center">
+                <img src="/images/logo.png" width="150px" height="130px">
             </td>
-            <td class="text-center m-0 p-0">
-            <h2 dir="rtl" lang="AR" style="font-family: DejaVu Sans, sans-serif;text-align: center;"> 
-            <br>جامعة عبد المالك السعدي
-            كلية العلوم
-            <br>تطوان
-            </h2>
+            <td style="text-align:center">
+                <img src="/images/faculte.png" width="260px" height="130px">
             </td>
             </tr>
         </thead>
 </table>
+</header>
 
-<fieldset>
-    <div class="head-title">
-    <h1 class="text-center m-0 p-0">ATTESTATION  DE  TRAVAIL</h1>
+<hr>
+
+
+<fieldset style="color: #000000;font-weight:bold;position:relative">
+
+<div class="head-title">
+    <h1 style="font-family: 'Baskerville Old Face'; font-size: 24px;margin-top:30px;text-align:center">ATTESTATION  DE  TRAVAIL</h1>
 </div>
 
 <div class="add-detail mt-10">
         <br>
-
         <h4>  Le Doyen de la Faculté des Sciences de Tétouan,</h4>   
         
-
-        <h4>  Certifie que Mr   :  NOM</h4>
-        <h4>  DOTI  : 21324 </h4> 
-        <br>
-
+        <p style="display: inline-block;">  Certifie que Mr   :   <strong> AKARID ABDERRAHIM</strong></p>
+        <h4>  DOTI  :    123654 </h4> 
+       
         <h4> Exerce à la dite Faculté en qualité de: </h4> 
 
-        <h2 align="center">GRADE</h2> 
-        <br>
-        <h4> En fois de quoi, cette attestation lui est délivrée, sur sa demande, pour servir et valoir ce que de droit.</h4> 
-        <p align="center" style="{ font-weight: bold; }">  Fait à Tétouan , le {{date("d/m/Y")}} </p>
+        <h3 style="text-align:center">TECHNICIEN 3 EME GRADE</h3> 
         
         <br>
-        <hr>
-    <div style="clear: both;"></div>
-</div>
+        <h4> En fois de quoi, cette attestation lui est délivrée, sur sa demande, pour servir et valoir ce que de droit.</h4> 
+        <p style="text-align:center;font-weight: bold;font-style: italic;">  Fait à Tétouan , le {{date("d/m/Y")}} </p>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+<br>
+<br>
+<br>
+<br>
 
+<br>
+<br>
+<br>
+<br>
+        
+</div>
 </fieldset>
+
+
+<footer id="footer">
+  <div id="footer-content" style="text-align:center;font-style: italic;">
+  <br>
+  <hr>
+  Université Abdelmalek Essaâdi, Faculté des Sciences, B.P. 2121 – Tétouan – Maroc <br>
+  Tel : (212) (0539) 97 24 23, Fax : (212) (0539) 99 45 00 – Site web : www.fst.ac.ma
+  </div>
+</footer>
 
 </body>
 </html>

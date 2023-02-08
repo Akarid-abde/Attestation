@@ -53,6 +53,26 @@ body {
   text-align: left;
   background-color: #fff; }
 
+.form-popup {
+  display: none;
+  border: 3px solid #f1f1f1;
+}
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 

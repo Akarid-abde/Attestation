@@ -16,10 +16,7 @@ class CreateRetraitsTable extends Migration
         Schema::create('retraits', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('DOTI');
-            $table->string('NomPrenom');
-            $table->string('NomPrenomAR');
             $table->string('DateRetraits');
-            
             $table->foreign('DOTI')
                 ->references('id')
                 ->on('users')

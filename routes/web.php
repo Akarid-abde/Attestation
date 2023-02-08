@@ -33,7 +33,8 @@ Route::get('users/{id}/edit','UserController@edit')->middleware('auth');
 Route::put('users/{id}','UserController@update')->middleware('auth');
 Route::delete('users/{id}','UserController@destroy')->middleware('auth');
 Route::get('search','UserController@search')->middleware('auth');
-
+Route::get('/find','UserController@index');
+Route::get('/find/action','UserController@find')->name('find.action');
 
 
 
@@ -44,6 +45,8 @@ Route::post('retraits','RetraitController@store')->middleware('auth');
 Route::get('retraits/{id}/edit','RetraitController@edit')->middleware('auth');
 Route::put('retraits/{id}','RetraitController@update')->middleware('auth');
 Route::delete('retraits/{id}','RetraitController@destroy')->middleware('auth');
+Route::get('/find1','RetraitController@index');
+Route::get('/find1/action1','RetraitController@find1')->name('find1.action1');
 
 
 
@@ -67,11 +70,15 @@ Route::get('/nav', function () {
 
 // Attestation de travail
 Route::get('Atravail','AtttController@index')->middleware('auth');
+
 // Generate pdf Attestation Travial
-Route::get('generate-pdf','AtttController@generatePDF');
+Route::get('generate-pdf','AtttController@generatePdfTest');
 Route::get('fr','AtttController@fr');
+
 Route::get('/Atravail/pdf', 'AtttController@pdf')->middleware('auth');
-Route::get('/Atravail/pdf/{id}', 'AtttController@pdfE')->middleware('auth')->name('AttestationTravail');
+Route::get('/Atravail/pdf/{id}', 'AtttController@generatePDF')->middleware('auth')->name('AttestationTravail');
 
 Route::get('/find','AtttController@index');
 Route::get('/find/action','AtttController@find')->name('find.action');
+
+

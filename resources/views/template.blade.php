@@ -4,8 +4,8 @@
 @section('content')
 
             <section id="Formulaire" class="border rounded p-3">
-                <h1 class="text-center"> Formulaire </h1>
-                <a href="#" id="showFormulaire" class="d-flex justify-content-md-end">
+                <h1 class="text-center"> AJOUTER </h1>
+                <a id="showFormulaire" class="d-flex justify-content-md-end">
                     <span class="badge badge-primary">
                         <i class="fa fa-arrow-down"></i>
                     </span>
@@ -76,9 +76,8 @@
                         </div>
                     </div>
 
-                   <!-- Telephones -->
                     <div class="form-row">
-                    <div class="form-group col-md-4">
+                        <div class="form-group col-md-4">
                             <label for="inputTELEPHONE">TELEPHONE</label>
                             <input name="TELEPHONE" type="text"  placeholder="+2126 XX XX XX XX" class="form-control" id="inputTELEPHONE">
                         </div>
@@ -112,6 +111,15 @@
                             <label for="inputDATE_DE_RECRUTEMENT">DATE DE RECRUTEMENT</label>
                             <input name="DATE_DE_RECRUTEMENT" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
                         </div>
+
+                        <!-- <div class="form-group col-md-2">
+                            <label for="">GRADE</label>
+                            <select name="GRADE" id="" class="form-control">
+                                <option selected>Choose...</option>
+                                <option value="">H</option>
+                                <option value="">F</option>
+                            </select>
+                        </div> -->
 
                         <div class="form-group col-md-4">
                             <label for="inputGRADE">GRADE</label>
@@ -169,11 +177,10 @@
 
                     <button type="submit" class="btn btn-primary">Valider</button>
                 </form>
-
             </section>
 
             <section class="mt-5 pt-3">
-                  <div class="panel-heading">Search</div>
+                <div class="panel-heading">Search</div>
                 <div class="panel-body ">
                     <input type="text" name="search" id="search" class="form-control"
                     placeholder="Search  Data" />
@@ -212,33 +219,74 @@
                             <td>{{$user->CIN}}</td>
                             <td>{{$user->NOM_PPRENOM}}</td>
                             <td>{{$user->GRADE}}</td>
-                            <td><button class="btn btn-success">Edite</button></td>
+                            <td><button onclick='openForm()'  class="btn btn-success"><a href="{{ url('users/'.$user->id.'/edit')}}">Edite</a></button></td>
                             <td><button class="btn btn-warning">Delete</button></td>
                             </tr>
                             @endforeach
                     
                         </tbody>
                 </table>
-                {!! $users->links() !!}
-
+                <!-- {!! $users->links() !!} -->
             </section>
 
-            <div id="search_list"></div>
+            <section class="mt-5 pt-3">
+                 <table class="table table-striped">
+                            <tr class="table-active">
+                                <th>DOTI</th>
+                                <th>CIN</th>
+                                <th>NOM Prenom</th>
+                                <th>DATE EFFECT ECHELLE</th>
+                                <th>ECHELLE</th>
+                                <th>ECHELLON</th>
+                                <th>DATE EFFECT ECHELLON</th>
+                                <th>ANNEE D'Examen</th>
+                                <th>Action</th>
+                            </tr>
+                            
+                        @foreach($users as $user)
+                            <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->CIN }}</td>
+                            <td>{{ $user->NOM_PPRENOM }}</td>
+                            <td>{{ $user->DATE_EFFET_ECHELLE }}</td>
+                            <td>{{ $user->ECHELLE }}</td>
+                            <td>{{ $user->ECHELLON }}</td>
+                            <td>{{ $user->DATE_EFFECT_ECHELLON }}</td>
+                            <td>{{ $user->DATE_EXAMAN }}</td>
+                            <td><button onclick='openForm()'  class="btn btn-success"><a href="{{ url('users/'.$user->id.'/edit')}}">Edite</a></button></td>
+                            <td><button class="btn btn-warning">Delete</button></td>
+                            </tr>
+                        @endforeach
+                    
+                </table>
+                {!! $users->links() !!}
+            </section>
+
+          
 @endsection
 
 <script>
-            $(document).ready(function(){
-             $('#search').on('keyup',function(){
-                 var query= $(this).val();
-                 $.ajax({
-                    url:"{{ url('template') }}",
-                    type:"GET",
-                    data:{'search':query},
-                    success:function(data){
-                        $('#search_list').html(data);
-                    }
-             });
-             //end of ajax call
-            });
-            });
+    $(document).ready(function(){
+        fetch_data();
+        function fetch_data(query = '')
+        {
+            $.ajax({
+                url:"{{ route('find.action') }}",
+                method:'GET',
+                data:{query:query},
+                dataType:'json',
+                success:function(data)
+                {
+                    $('tbody').html(data.table_data);
+                 
+                }
+            })
+        }
+
+        $(document).on('keyup','#search',function(){
+            var query = $(this).val();
+            fetch_data(query);
+        });
+        
+    });
 </script>

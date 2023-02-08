@@ -14,31 +14,25 @@
                 <form id="form" action="{{ url('retraits') }}" method="post">
                     {{ csrf_field() }}
 
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputNom">DOTI</label>
-                            <input name="name" type="text" class="form-control" id="inputNOM" require="true">
+                        <div class="form-group col-md-2">
+                            <label for="inputDOTI">DOTI</label>
+                            <input name="DOTI" type="text" class="form-control" id="inputDOTI">
                         </div>
-
-                        <div class="form-group col-md-4">
-                            <label for="inputCIN">DATE RETRAITS</label>
-                            <input name="CIN" type="text" class="form-control" id="inputCIN">
-                        </div>
-                
                     </div>
 
-                    <hr><br>
-
-                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    
                 </form>
             </section>
 
-            <section class="mt-5 pt-3">
+            <section class="border rounded p-3">
                   <div class="panel-heading">Search</div>
                 <div class="panel-body ">
-                    <input type="text" name="doti" id="doti" class="form-control"
-                    placeholder="DOTI" />
+                    <div class="form-group col-md-2">
+                        <input type="text" name="doti" id="doti" class="form-control"
+                        placeholder="Search  Data" />
+                    </div>
                 </div>
+
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2 p-2">    
                 <div class="d-flex flex-row">
                         <span class="badge badge-primary text-center mr-2">
@@ -53,8 +47,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="listdata" id="listdata">
+                 <div class="listdata" id="listdata">
                     <table class="table table-striped">
                         <thead>
                             <tr class="table-active">
@@ -76,11 +69,8 @@
                     </table>
                 {!! $retraits->links() !!}
                  </div>
-
-
             </section>
-
-          
+            
 @endsection
 
 <script>

@@ -10,7 +10,7 @@ class Retrait extends Model
 
 
     protected $fillable = [
-        'user_id','Doti', 'NomPrenom', 'NomPrenomAR','DateRetraits',
+        'user_id','Doti','DateRetraits',
     ];
 
     public function user()
