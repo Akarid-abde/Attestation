@@ -7,6 +7,7 @@ use App\Services\PayUService\Exception;
 use App\User;
 use PDF;
 use DB;
+use QrCode;
 
 class AtttController extends Controller
 {
@@ -19,7 +20,10 @@ class AtttController extends Controller
     public function generatePDF($id)
     {
         $data =  User::find($id);
-        
+        $qrcodeval = 'UAE-'.$data->id.' '.$data->NOM_PPRENOM.' '.$data->GRADE.'';
+        $qrcode = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate($qrcodeval));
+        $qr =  'data:image/'.$type3.';base64,'.$qrcode;
+
         $path = base_path('public/images/logo.png');
         $type = pathinfo($path,PATHINFO_EXTENSION);
         $da = file_get_contents($path);
@@ -35,10 +39,10 @@ class AtttController extends Controller
         $da3 = file_get_contents($path3);
         $logo3 = 'data:image/'.$type3.';base64,'.base64_encode($da3);
 
-        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, "isRemoteEnabled"=> true,"defaultPaperSize" => "a4"])->loadView('myPDF', ['data' => $data,'logo' => $logo,'logo2' => $logo2
-        ,'logo3' => $logo3]);
-        // return $pdf->download('Attestation.pdf');
 
+        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, "isRemoteEnabled"=> true,"defaultPaperSize" => "a4"])->loadView('myPDF', ['data' => $data,'logo' => $logo,'logo2' => $logo2,
+        'qrcode' => $qr ,'logo3' => $logo3]);
+        // return $pdf->download('Attestation.pdf');
         return $pdf->stream('Attestation.pdf');
     }
 

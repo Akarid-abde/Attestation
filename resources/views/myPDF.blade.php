@@ -3,6 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Attestation de Travail</title>
+    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/qrcode.js') }}"></script>
+
 </head>
 <style type="text/css">
     body{
@@ -32,6 +35,7 @@
         display: block; text-align: center; 
         position: running(header);
     }
+
 </style>
 <body>
     <div class="container">
@@ -58,23 +62,20 @@
 
 <hr>
 
-<fieldset style="color: #000000;font-weight:bold;position:relative;border: thick double #000000;">
+<fieldset style="color: #000000;font-weight:bold;position:relative;border: thick double #000000;  margin-right: 50px;margin-left: 50px;">
 <br>
 <div class="head-title">
     <h1 style="font-family: 'Baskerville Old Face'; font-size: 25px;margin-top:30px;text-align:center;font-weight: normal;text-decoration: underline;">ATTESTATION  DE  TRAVAIL</h1>
 </div>
 
-<div class="add-detail mt-10">
+<div class="add-detail">
         <h4 style="font-weight: normal;;font-size: 20px">  Le Doyen de la Faculté des Sciences de Tétouan,</h4>   
-        
-        <p style="display: inline-block;font-weight: normal;">  Certifie que Mr  :   <strong style="font-size: 22px;font-weight: bold;"> {{ $data->NOM_PPRENOM }}</strong></p>
-        <p style="font-weight: normal;">  DOTI  :   <strong style="font-size: 22px;font-weight: bold;"> {{ $data->id }}</strong></p>
-       
+        <p style="font-weight: normal;">  Certifie que Mr/Mme     <strong style="font-size: 20px;font-weight: bold;margin:10px;">: {{ $data->NOM_PPRENOM }}</strong></p>
+        <p style="font-weight: normal;">  DOTI    <strong style="font-size: 20px;font-weight: bold;margin:110px;">:  {{ $data->id }}</strong></p>
         <h4 style="font-weight: normal;font-size: 20px"> Exerce à la dite Faculté en qualité de: </h4> 
 
         <h3 style="text-align:center;font-size: 22px;">{{ $data->GRADE }}</h3> 
         
-        <br>
         <h4 style="font-weight: normal;font-size: 20px"> En fois de quoi, cette attestation lui est délivrée, sur sa demande, pour servir et valoir ce que de droit.</h4> 
         <h3 style="text-align:center;font-weight: bold;font-style: italic;font-size: 20px">  Fait à Tétouan , le {{date("d/m/Y")}} </h3>
         
@@ -90,8 +91,14 @@
         <br>
         <br>
         <br>
+        <br>
+
+        <div style="bottom: 8px;left: 89%;position: relative;">
+            <img src="<?php echo $qrcode ?>" alt="<?php echo $qrcode ?>" width="50px" height="50px">
+        </div>
 </div>
 </fieldset>
+
 
 
 <footer id="footer" style="font-weight: 100;">
@@ -103,6 +110,35 @@
   </div>
 </footer>
     </div>
+
+<script type="text/javascript">
+   var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 16,
+	height : 16
+});
+
+function makeCode () {		
+	var elText = document.getElementById("text");
+	
+	if (!elText.value) {
+		alert("Input a text");
+		elText.focus();
+		return;
+	}
+	qrcode.makeCode(elText.value);
+}
+
+makeCode();
+$("#text").
+	on("blur", function () {
+		makeCode();
+	}).
+	on("keydown", function (e) {
+		if (e.keyCode == 13) {
+			makeCode();
+		}
+	});
+</script>
 
 </body>
 </html>
