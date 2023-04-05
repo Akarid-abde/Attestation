@@ -124,7 +124,12 @@ class UserController extends Controller
         $users->ECHELLE = $request->input('ECHELLE');
 
         $users->DATE_EFFET_ECHELLE= $request->input('DATE_EFFET_ECHELLE');
-        $users->DATE_EXAMAN = date('Y/m/d', strtotime($users->DATE_EFFET_ECHELLE. '+ 6 years'));
+
+        if ($request->input('GRADE') == "INGENIEUR DETAT GRADE PRINCIPALE") {
+            $users->DATE_EXAMAN = date('Y/m/d', strtotime($users->DATE_EFFET_ECHELLE. '+ 4 years'));
+        }else {
+            $users->DATE_EXAMAN = date('Y/m/d', strtotime($users->DATE_EFFET_ECHELLE. '+ 6 years'));
+        }
 
         $users->ECHELLON = $request->input('ECHELLON');
         $users->DATE_EFFECT_ECHELLON = $request->input('DATE_EFFECT_ECHELLON');
@@ -188,7 +193,12 @@ class UserController extends Controller
         $users->GRADE_AR = $request->input('GRADE_AR');
 
         $users->DATE_EFFET_ECHELLE= $request->input('DATE_EFFET_ECHELLE');
-        $users->DATE_EXAMAN = date('Y/m/d', strtotime($users->DATE_EFFET_ECHELLE. '+ 6 years'));
+
+        if ($request->input('GRADE') == "INGENIEUR DETAT GRADE PRINCIPALE") {
+            $users->DATE_EXAMAN = date('Y/m/d', strtotime($users->DATE_EFFET_ECHELLE. '+ 4 years'));
+        }else {
+            $users->DATE_EXAMAN = date('Y/m/d', strtotime($users->DATE_EFFET_ECHELLE. '+ 6 years'));
+        }
 
 
         $users->ECHELLE = $request->input('ECHELLE');

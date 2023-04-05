@@ -22,7 +22,7 @@ class AtttController extends Controller
         $data =  User::find($id);
         $qrcodeval = 'UAE-'.$data->id.' '.$data->NOM_PPRENOM.' '.$data->GRADE.'';
         $qrcode = base64_encode(QrCode::format('svg')->size(50)->errorCorrection('H')->generate($qrcodeval));
-        $qr =  'data:image/'.$type3.';base64,'.$qrcode;
+        
 
         $path = base_path('public/images/logo.png');
         $type = pathinfo($path,PATHINFO_EXTENSION);
@@ -38,6 +38,8 @@ class AtttController extends Controller
         $type3 = pathinfo($path3,PATHINFO_EXTENSION);
         $da3 = file_get_contents($path3);
         $logo3 = 'data:image/'.$type3.';base64,'.base64_encode($da3);
+
+        $qr =  'data:image/'.$type3.';base64,'.$qrcode;
 
 
         $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, "isRemoteEnabled"=> true,"defaultPaperSize" => "a4"])->loadView('myPDF', ['data' => $data,'logo' => $logo,'logo2' => $logo2,

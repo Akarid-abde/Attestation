@@ -60,9 +60,8 @@
 </table>
 </header>
 
-<hr>
 
-<fieldset style="color: #000000;font-weight:bold;position:relative;border: thick double #000000;  margin-right: 50px;margin-left: 50px;">
+<fieldset style="color: #000000;font-weight:bold;position:relative;border: thick double #ffffff;  margin-right: 50px;margin-left: 50px;">
 <br>
 <div class="head-title">
     <h1 style="font-family: 'Baskerville Old Face'; font-size: 25px;margin-top:30px;text-align:center;font-weight: normal;text-decoration: underline;">ATTESTATION  DE  TRAVAIL</h1>
