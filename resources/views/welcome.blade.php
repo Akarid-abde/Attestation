@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>App University Abdelmalek Saadi</title>
+        <title>MOON SYSTEM</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,16 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    App Fs Tetouan
+                    App Moon System
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">بطاقة الترقية</a>
-                    <a href="https://laracasts.com">GESTION ABSENCE</a>
-                    <a href="https://laravel-news.com">RETRAITS</a>
-                    <a href="https://blog.laravel.com">GESTION DES CONGES</a>
-                    <a href="https://forge.laravel.com">GESTION DES HEURS </a>
-                    <a href="https://forge.laravel.com">ATTESTATION TRAVAIL</a>
+                    <a href="{{ route('login') }}">ATTESTATION DE STAGE</a>
+                    <a href="{{ route('login') }}">ATTESTATION DE TRAVAIL</a>
 
                 </div>
             </div>

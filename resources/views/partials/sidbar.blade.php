@@ -1,5 +1,5 @@
 <nav id="sidebar" class="active">
-            <h1><a href="#" class="logo">FS.Te</a></h1>
+            <h1><a href="#" class="logo">MOONSy</a></h1>
             <ul class="list-unstyled components mb-5">
                 <li class="active text-center">
                     <a href="#"><span class="fa fa-menu"></span> Menu</a>
