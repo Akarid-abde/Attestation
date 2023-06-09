@@ -4,183 +4,127 @@
 @section('content')
 
             <section id="Formulaire" class="border rounded p-3">
-                <h1 class="text-center"> AJOUTER </h1>
+                <h1 class="text-center"> Tirer Attestation </h1>
                 <a id="showFormulaire" class="d-flex justify-content-md-end">
                     <span class="badge badge-primary">
                         <i class="fa fa-arrow-down"></i>
                     </span>
                 </a>
-
-                <form id="form" action="{{ url('users') }}" method="post">
+         
+                <form id="form" action="{{ url('attestations') }}" method="post">
                     {{ csrf_field() }}
 
                     <div class="form-row">
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-4">
                             <label for="inputNom">Nom</label>
                             <input name="name" type="text" class="form-control" id="inputNOM" require="true">
                         </div>
 
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-4">
                             <label for="inputPrenom">Prenom</label>
                             <input name="prenom" type="text" class="form-control" id="inputPRENOM" require="true">
                         </div>
 
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-4">
                             <label for="inputCIN">CIN</label>
                             <input name="CIN" type="text" class="form-control" id="inputCIN">
                         </div>
-                 
-                        <div class="form-group col-md-2">
-                            <label for="inputDOTI">DOTI</label>
-                            <input name="DOTI" type="text" class="form-control" id="inputDOTI">
-                        </div>
 
-                        <div class="form-group col-md-2">
-                            <label for="inputDOTI">N_POSTE</label>
-                            <input name="N_POSTE" type="text" class="form-control" id="inputN_POSTE">
-                        </div>
-                        <div class="form-group col-md-2">
-                            <label for="inputState">Sexe</label>
-                            <select name="Sexe" id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option value="H">H</option>
-                                <option value="F">F</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-2">
-                            <label for="inputNOM_PPRENOM">NOM PRENOM</label>
-                            <input name="NOM_PPRENOM" type="text" class="form-control" id="inputNOM_PPRENOM">
-                        </div>
-                        <div class="form-group col-md-2">
-                            <label for="inputNOM_PRENOM_AR">الاسم الكامل</label>
-                            <input name="NOM_PRENOM_AR" type="text" class="form-control" id="inputNOM_PRENOM_AR">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputDateNaissance">Date Naissance</label>
-                            <input name="DATE_DE_NAISSANCE" type="date" class="form-control" id="dateN">
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Just
-                            </label>
-                        </div>
-        
-                        <div class="form-group col-md-2">
-                            <label for="inputAnneeNaissance">ANNEE NAISSANCE</label>
-                            <input name="YEAR_NAISSANCE" type="number" min="1900" max="2099" step="1" value="2016" class="form-control" id="inputAnnee" />
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputTELEPHONE">TELEPHONE</label>
-                            <input name="TELEPHONE" type="text"  placeholder="+2126 XX XX XX XX" class="form-control" id="inputTELEPHONE">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputTELE_FAX">TELE_FAX</label>
-                            <input name="TELE_FAX" type="text" placeholder="+2125 XX XX XX XX"  class="form-control" id="inputTELE_FAX">
-                        </div>
-                        <div class="form-group col-md-4" hidden="true">
-                        <label for="inputPassword4">Password</label>
-                        <input name="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                        </div>
                     </div>
 
                     <hr><br>
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmailPersonnel">Email Personnel</label>
-                            <input name="email" type="email" class="form-control" id="inputEmailPersonnel" placeholder="Example@gmail.com">
-                        </div>
 
-                        <div class="form-group col-md-6">
-                            <label for="inputEmailAcademic">Email Academic</label>
-                            <input name="EMAIL_ACADEMIC" type="email" class="form-control" id="inputEmailAcademic" placeholder="Example@uae.ac.ma">
-                        </div>
-
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputDATE_DE_RECRUTEMENT">DATE DE RECRUTEMENT</label>
-                            <input name="DATE_DE_RECRUTEMENT" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
-                        </div>
-
-                        <!-- <div class="form-group col-md-2">
-                            <label for="">GRADE</label>
-                            <select name="GRADE" id="" class="form-control">
-                                <option selected>Choose...</option>
-                                <option value="">H</option>
-                                <option value="">F</option>
-                            </select>
-                        </div> -->
-
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-12">
                             <label for="inputGRADE">GRADE</label>
                             <input name="GRADE" type="text" class="form-control" id="inputNOM">
                         </div>
 
-                        <div class="form-group col-md-4">
-                            <label for="inputGRADE_AR">GRADE_AR</label>
-                            <input name="GRADE_AR" type="text" class="form-control" id="inputNOM">
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label for="inputGRADE_AR">AFFECTATION</label>
-                            <input name="AFFECTATION" type="text" class="form-control" id="inputNOM">
-                        </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="inputDATE_EFFET_ECHELLE">DATE EFFET ECHELLE</label>
-                            <input name="DATE_EFFET_ECHELLE" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <label for="inputECHELLE">ECHELLE</label>
-                            <input name="ECHELLE" type="text" class="form-control" id="inputECHELLE">
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <label for="inputNom">ECHELLON</label>
-                            <input name="ECHELLON" type="text" class="form-control" id="inputNOM">
+                            <label for="inputDATE_EFFET_ECHELLE">DATE DETBUT</label>
+                            <input name="DATE_DEBUT" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
                         </div>
                         
                         <div class="form-group col-md-4">
-                            <label for="inputDATE_EFFET_ECHELLE">DATE EFFET ECHELLE</label>
-                            <input name="DATE_EFFECT_ECHELLON" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
+                            <label for="inputDATE_EFFET_ECHELLE">DATE FIN</label>
+                            <input name="DATE_FIN" type="date" class="form-control" id="inputDATE_DE_RECRUTEMENT">
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputAddress">ADRESSE</label>
-                        <textarea rows="3" cols="3"  name="ADRESSE" type="text" class="form-control" id="inputAddress" placeholder="ADRESSE"></textarea>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputState">Active</label>
-                            <select name="Active" id="inputState" class="form-control">
-                                <option selected>CHOOSE...</option>
-                                <option value="Active">ACTIVE</option>
-                                <option value="Desactive">DESACTIVE</option>
-                            </select>
+                        
+                        <div class="form-group col-md-4 invisible">
+                            <label for="inputPrenom">responsable</label>
+                            <input name="responsable" value="{{Auth::user()->name}}" type="text" class="form-control"  id="inputResponsable" require="true">
                         </div>
+
+                        <div class="form-group col-md-4 invisible">
+                            <label for="inputPrenom">id responsable</label>
+                            <input name="id_user" value="{{Auth::user()->id}}" type="text" class="form-control"  id="inputResponsable" require="true">
+                        </div>
+
                     </div>
 
                     <button type="submit" class="btn btn-primary">Valider</button>
                 </form>
+
+            </section>
+
+            
+
+            @if (Route::has('register') and Auth::user()->TYPEUSER == 'ADMIN')
+            
+            <section id="Formulaire" class="border rounded p-3">
+                <h1 class="text-center"> Ajouter User </h1>
+                <a id="showFormulaire2" class="d-flex justify-content-md-end">
+                    <span class="badge badge-primary">
+                        <i class="fa fa-arrow-down"></i>
+                    </span>
+                </a>
+         
+                <form id="form2" action="{{ url('users') }}" method="post">
+                    {{ csrf_field() }}
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputNom">Nom</label>
+                            <input name="name" type="text" class="form-control" id="inputNOM" require="true">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="inputPrenom">Prenom</label>
+                            <input name="prenom" type="text" class="form-control" id="inputPRENOM" require="true">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="inputCIN">CIN</label>
+                            <input name="CIN" type="text" class="form-control" id="inputCIN">
+                        </div>
+                
+                    </div>
+                    <hr><br>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">TypeUser</label>
+                            <select name="TYPEUSER" id="inputState" class="form-control">
+                                <option selected>CHOOSE...</option>
+                                <option value="0">ADMIN</option>
+                                <option value="1">USER</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </form>
+
             </section>
 
             <section class="mt-5 pt-3">
-                <div class="panel-heading">Search</div>
+            <h2 class="panel-heading">Liste des certificats retirés</h2>
+                <!-- <div class="panel-heading">Search</div>
                 <div class="panel-body ">
                     <input type="text" name="search" id="search" class="form-control"
                     placeholder="Search  Data" />
@@ -191,78 +135,85 @@
                         Export : 
                         </span>
                         <div class="mr-2">
-                            <!-- <a href="#"><span class="fa fa-file-excel-o"></span>cvs</a> -->
                             <span class="badge badge-primary"><i class="fa fa-file-excel-o"></i>cvs</span>
                         </div>
                         <div class="mr-2">
                             <span class="badge badge-primary"><i class="fa fa-file-excel-o"></i>xls</span>
                         </div>
                     </div>
-                </div>
-                 <table class="table table-striped">
+                </div> -->
+
+
+                <table class="table table-striped">
                         <thead>
                             <tr class="table-active">
-                                <th>DOTI</th>
-                                <th>NPOST</th>
+                                <th>ID</th>
                                 <th>CIN</th>
                                 <th>NOM Prenom</th>
                                 <th>GRADE</th>
+                                <th>Debut</th>
+                                <th>Fin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($attestations as $attestation)
+                            <tr>
+                            <td>{{$attestation->id_attestation}}</td>
+                            <td>{{$attestation->CIN}}</td>
+                            <td>{{$attestation->NOM_PRENOM}}</td>
+                            <td>{{$attestation->GRADE}}</td>
+                            <td>{{$attestation->DATE_DEBUT}}</td>
+                            <td>{{$attestation->DATE_FIN}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                </table>
+                <div>
+                {!! $attestations->links() !!}
+                </div>
+            </section>
+
+
+            <section class="mt-5 pt-3">
+            <h2 class="panel-heading">List Users</h2>
+                <table class="table table-striped">
+                        <thead>
+                            <tr class="table-active">
+                                <th>ID</th>
+                                <th>CIN</th>
+                                <th>NOM Prenom</th>
+                                <th>GRADE</th>
+                                <th>Debut</th>
+                                <th>Fin</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
                             @foreach($users as $user)
                             <tr>
                             <td>{{$user->id}}</td>
-                            <td>{{$user->N_POSTE}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->email}}</td>
                             <td>{{$user->CIN}}</td>
-                            <td>{{$user->NOM_PPRENOM}}</td>
-                            <td>{{$user->GRADE}}</td>
+                            <td>{{$user->TYPEUSER}}</td>
                             <td><button onclick='openForm()'  class="btn btn-success"><a href="{{ url('users/'.$user->id.'/edit')}}">Edite</a></button></td>
-                            <td><button class="btn btn-warning">Delete</button></td>
+                            <form method="post" action="{{ url('users/'.$user->id.'/delete') }}" class="form-container">
+                                @method('delete')
+                                @csrf
+                                <td>
+                                <button class="btn btn-warning">DELETE</button>
+                                </td>
+                            </form>
                             </tr>
                             @endforeach
-                    
                         </tbody>
                 </table>
-                <!-- {!! $users->links() !!} -->
-            </section>
-
-            <section class="mt-5 pt-3">
-                 <table class="table table-striped">
-                            <tr class="table-active">
-                                <th>DOTI</th>
-                                <th>CIN</th>
-                                <th>NOM Prenom</th>
-                                <th>DATE EFFECT ECHELLE</th>
-                                <th>ECHELLE</th>
-                                <th>ECHELLON</th>
-                                <th>DATE EFFECT ECHELLON</th>
-                                <th>ANNEE D'Examen</th>
-                                <th>Action</th>
-                            </tr>
-                            
-                        @foreach($users as $user)
-                            <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->CIN }}</td>
-                            <td>{{ $user->NOM_PPRENOM }}</td>
-                            <td>{{ $user->DATE_EFFET_ECHELLE }}</td>
-                            <td>{{ $user->ECHELLE }}</td>
-                            <td>{{ $user->ECHELLON }}</td>
-                            <td>{{ $user->DATE_EFFECT_ECHELLON }}</td>
-                            <td>{{ $user->DATE_EXAMAN }}</td>
-                            <td><button onclick='openForm()'  class="btn btn-success"><a href="{{ url('users/'.$user->id.'/edit')}}">Edite</a></button></td>
-                            <td><button class="btn btn-warning">Delete</button></td>
-                            </tr>
-                        @endforeach
-                    
-                </table>
+                <div>
                 {!! $users->links() !!}
+                </div>
+                
             </section>
-
-          
+            @endif
 @endsection
 
 <script>

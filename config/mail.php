@@ -74,10 +74,12 @@ return [
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'abderrahi.akarid@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'abderrahi.akarid@gmail.com'),
-    ],
+    // 'from' => [
+    //     'address' => env('MAIL_FROM_ADDRESS', 'abderrahi.akarid@gmail.com'),
+    //     'name' => env('MAIL_FROM_NAME', 'abderrahi.akarid@gmail.com'),
+    // ],
+
+    'from' => ['address' => 'abderrahi.akarid@gmail.com', 'name' => 'Ilham'],
 
     /*
     |--------------------------------------------------------------------------

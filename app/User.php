@@ -18,8 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail,CanResetPassword
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','is_admin','N_POSTE','CIN','EMAIL_ACADEMIC','NOM','PRENOM','NOM_PRENOM','NOM_PRENOM_AR','DATE_DE_NAISSANCE','YEAR_NAISSANCE',
-        'DATE_DE_RECRUTEMENT','GRADE','GRADE_AR','DATE_EFFET_ECHELLE','ECHELLE','ECHELLON','DATE_EFFECT_ECHELLON','AFFECTATION','ADRESSE','TELEPHONE','TELE_FAX','SEXE','ACTIVE',
+        'name', 'email', 'password','is_admin','CIN','NOM','PRENOM','TYPEUSER',
     ];
 
     /**
@@ -44,8 +43,8 @@ class User extends Authenticatable implements MustVerifyEmail,CanResetPassword
     {
         return $this->hasOne(Retrait::class, 'foreign_key');
     }
-    public function fonctionnaire()
+    public function attestation()
     {
-        return $this->hasOne(Fonctionnaire::class, 'foreign_key');
+        return $this->hasOne(Attestation::class, 'foreign_key');
     }
 }

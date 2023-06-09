@@ -2,10 +2,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title> Attestation de Stage </title>
+    <title> Attestation de Travail </title>
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/qrcode.js') }}"></script>
-
 </head>
 <style type="text/css">
     body{
@@ -64,22 +63,20 @@
 <fieldset style="color: #000000;font-weight:bold;position:relative;border: thick double #ffffff;  margin-right: 50px;margin-left: 50px;">
 <br>
 <div class="head-title">
-    <h1 style="font-family: 'Baskerville Old Face'; font-size: 25px;margin-top:30px;text-align:center;font-weight: normal;text-decoration: underline;">ATTESTATION  DE  STAGE</h1>
+    <h1 style="font-family: 'Baskerville Old Face'; font-size: 25px;margin-top:30px;text-align:center;font-weight: normal;text-decoration: underline;">ATTESTATION  DE  TRAVAIL</h1>
 </div>
 
 <div class="add-detail">
 <h4 style="font-weight: normal;;font-size: 20px">  Je soussigné M. HBIBI SAID agissant en qualité de directeur générale
 de la société Moon system Sarl dont le siège social est situé à avenue Mohammadia N° 282 D, Tétouan ,<br> Atteste par présente que Mr/Mme.  
 <strong style="font-size: 20px;font-weight: bold;"> {{ $data->NOM_PRENOM }}</strong> titulaire de la CIN N°<strong style="font-size: 20px;font-weight: bold;"> {{ $data->CIN }}</strong>,
-a effectué un stage pratique au sein de notre société en qualité d’un <strong style="font-size: 20px;font-weight: bold;"> {{ $data->GRADE }}</strong>
-durant la période allant du <strong style="font-size: 20px;font-weight: bold;">{{ $data->DATE_DEBUT }}</strong></p> au <strong style="font-size: 20px;font-weight: bold;margin:10px;"> {{ $data->DATE_FIN }}</strong>
+Travaille chez notre société  en qualité de
+ <strong style="font-size: 20px;font-weight: bold;"> {{ $data->GRADE }}</strong>
+ depuis <strong style="font-size: 20px;font-weight: bold;">{{ $data->DATE_DEBUT }}</strong></p> a ce jour.
 </h4>   
 
-    
-        
         <h4 style="font-weight: normal;font-size: 20px"> Cette attestation est délivrée à l’intéressé pour servir et faire valoir ce que de droit.</h4> 
         <h3 style="text-align:center;font-weight: bold;font-style: italic;font-size: 20px">  Fait à Tétouan , le {{date("d/m/Y")}} </h3>
-        
         <br>
         <br>
         <br>
@@ -93,14 +90,11 @@ durant la période allant du <strong style="font-size: 20px;font-weight: bold;">
         <br>
         <br>
         <br>
-
         <div style="bottom: 8px;left: 89%;position: relative;">
             <img src="<?php echo $qrcode ?>" alt="<?php echo $qrcode ?>" width="50px" height="50px">
         </div>
 </div>
 </fieldset>
-
-
 
 <footer id="footer" style="font-weight: 100;">
   <div id="footer-content" style="text-align:center;font-style: italic;">

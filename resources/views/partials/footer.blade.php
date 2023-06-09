@@ -40,9 +40,8 @@
             <i class="fa fa-gem me-3 text-secondary"></i>Présentation
           </h6>
           <p>
-          La Faculté des Sciences de Tétouan (FS - Tétouan) a été crée au sein de l'Université Sidi Mohammed Ben Abdellah par décret n 2-82-355 du 16 Rabia 1403....
-          </p>
-          <a href="https://www.fst.ac.ma/site/presentation.html">lire la suite</a>
+          Moon Système a été crée
+          <a href="#">lire la suite</a>
         </div>
         <!-- Grid column -->
 
@@ -55,9 +54,7 @@
           <p>
             <a href="#!" class="text-reset">Accueil</a>
           </p>
-          <p>
-            <a href="#!" class="text-reset">Formation</a>
-          </p>
+      
           <p>
             <a href="#!" class="text-reset">Contact</a>
           </p>
@@ -67,11 +64,11 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fa fa-home me-3 text-secondary"></i> Avenue de Sebta, Mhannech II 93002- Tétouan - Maroc</p>
+          <p><i class="fa fa-home me-3 text-secondary"></i> Avennue mohammadia N° 282 D- Tétouan - Maroc</p>
           <p>
-            <i class="fa fa-envelope me-3 text-secondary"></i>fs.tetouan.contact@gmail.com</p>
-        <p><i class="fa fa-phone me-3 text-secondary"></i>  (+212) 5 39 99 64 32</p>
-        <p><i class="fa fa-phone me-3 text-secondary"></i> (+212) 5 39 99 45 00</p>
+            <i class="fa fa-envelope me-3 text-secondary"></i> moonsystemcontact@gmail.com </p>
+        <p><i class="fa fa-phone me-3 text-secondary"></i>  Fixe: +212 539 721 049</p>
+        <p><i class="fa fa-phone me-3 text-secondary"></i> Portable: +212 677 165 543</p>
         </div>
         <!-- Grid column -->
       </div>
@@ -83,8 +80,8 @@
 
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Tous Droits Réservés FS Tetouan Copyright <script> document.write(new Date().getFullYear());</script>. Courriel: fs.tetouan.contact@gmail.com
-Faculté des Sciences, BP. 2121 M'Hannech II , 93030 Tétouan Maroc
+    Tous Droits Réservés Moon Système Copyright <script> document.write(new Date().getFullYear());</script>. Courriel: moonsystemcontact@gmail.com
+, Avennue mohammadia N° 282 D- Tétouan - Maroc
     <a class="text-reset fw-bold" href="#"></a>
   </div>
   <!-- Copyright -->

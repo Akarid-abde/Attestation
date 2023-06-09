@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRetraitsTable extends Migration
+class CreateAttestationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateRetraitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('retraits', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedBigInteger('DOTI');
-            $table->string('DateRetraits');
-            $table->foreign('DOTI')
+        Schema::create('attestations', function (Blueprint $table) {
+            $table->increments('id_attestation');
+            $table->unsignedBigInteger('id_users');
+            $table->string('responsable');
+            $table->enum('type_attestation',['STAGE','TRAVIAL']);
+            $table->foreign('id_users')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
@@ -30,10 +31,8 @@ class CreateRetraitsTable extends Migration
      *
      * @return void
      */
-    
     public function down()
     {
-        Schema::dropIfExists('retraits');
+        Schema::dropIfExists('attestations');
     }
-
 }

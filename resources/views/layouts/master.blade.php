@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('images/MoonSystem.ico') }}"> 
    
    <script>
             $(document).ready(function(){
@@ -28,6 +29,10 @@
                 $('#showFormulaire').click(function(){
                     $("#form").toggle('slow');
                 });
+                $('#showFormulaire2').click(function(){
+                    $("#form2").toggle('slow');
+                });
+
                 $('#flexCheckChecked').click(function(){
                     if($(this).prop("checked") == true){
                         
@@ -49,6 +54,9 @@
             display:none;
         }
         #form{
+            display:none;   
+        }
+        #form2{
             display:none;   
         }
     </style>

@@ -33,18 +33,8 @@
                                     </form>
                                 </div>
                             </li>
-                        @if (Route::has('register') and Auth::user()->ACTIVE == "Active")
-                            <!-- @if (Route::has('register') and Auth::user()->ACTIVE == "Active") -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Register</a>
-                            </li>
-                        @else
-                        @endif
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
-                        </li>
+                
                     @endauth
-                    @endif
                 @endif
               </ul>
             </div>

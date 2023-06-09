@@ -3,15 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
 
-class Retrait extends Model
+class Attestation extends Model
 {
+    //
 
 
-    protected $fillable = [
-        'user_id','Doti','DateRetraits',
-    ];
+
+    public $primarykey = 'id_attestation';
+    public $incrementing = false;
 
     public function user()
     {

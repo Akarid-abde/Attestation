@@ -3,22 +3,25 @@
 @section('content')
 
 <div class="container">
-            <h3>Attestation de travail</h3>
+        <h3>Attestation de STAGE</h3>
             <div class="panel panel-default">
                 <div class="panel-heading">Search</div>
                 <div class="panel-body">
                     <input type="text" name="search" id="search" class="form-control"
-                    placeholder="Doti" />
+                    placeholder="Search by - employee - type d'attestation " />
                 </div>
                 <div class="table-responsive">
                     <h3 align="center">Total Data : <span id="total_records"></span></h3>
                     <table class="table table-striped table-bordeed">
                         <thead>
                             <tr>
-                                <th>DOTI</th>
-                                <th>N_POST</th>
-                                <th>NOM_PRENOM</th>
-                                <th>GRADE</th>
+                                <th>ID</th>
+                                <th>Type_Attestation</th>
+                                <th>CIN</th>
+                                <th>NOM</th>
+                                <th>DEBUT</th>
+                                <th>FIN</th>
+                                <th>Date de Creation</th>
                                 <th><i class="fa fa-print"></i></th>
                             </tr>
                         </thead>

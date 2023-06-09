@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ asset('images/MoonSystem.ico') }}"> 
 
         <!-- Styles -->
         <style>
@@ -83,6 +84,8 @@
                 
                 <div class="title m-b-md">
                     App Moon System
+                    <br>
+                    <img width="70px" height="70px" class="rounded" src="{{ asset('images/MoonSystem.ico') }}" alt="">
                 </div>
 
                 <div class="links">
